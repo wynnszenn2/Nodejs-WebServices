@@ -1,0 +1,21 @@
+{
+  "name": "wine-cellar",
+  "version": "0.0.1",
+  "description": "Wine Cellar Application",
+  "main": "serverwithanalytics.js",
+  "dependencies": {
+    "express": "^3.16.7",
+    "logfmt": "^1.1.2",
+    "mongodb": "^1.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node serverwithanalytics.js"
+  },
+  "author": "",
+  "license": "ISC"
+  "engines": {
+    "node": "0.10.1"
+  }
+}
