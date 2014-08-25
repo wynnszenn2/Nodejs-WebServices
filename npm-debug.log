@@ -1,0 +1,86 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'mongodb@1.3.13' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.30
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'mongodb@1.3.13', null ]
+7 verbose cache add name=undefined spec="mongodb@1.3.13" args=["mongodb@1.3.13",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'mongodb@1.3.13',
+8 verbose parsed url   path: 'mongodb@1.3.13',
+8 verbose parsed url   href: 'mongodb@1.3.13' }
+9 verbose cache add name="mongodb" spec="1.3.13" args=["mongodb","1.3.13"]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: '1.3.13',
+10 verbose parsed url   path: '1.3.13',
+10 verbose parsed url   href: '1.3.13' }
+11 verbose addNamed [ 'mongodb', '1.3.13' ]
+12 verbose addNamed [ '1.3.13', '1.3.13' ]
+13 silly lockFile 27492900-mongodb-1-3-13 mongodb@1.3.13
+14 verbose lock mongodb@1.3.13 C:\Users\wynnszenna\AppData\Roaming\npm-cache\27492900-mongodb-1-3-13.lock
+15 verbose request where is /mongodb
+16 verbose request registry https://registry.npmjs.org/
+17 verbose request id 423e504c7fd72cc0
+18 verbose url raw /mongodb
+19 verbose url resolving [ 'https://registry.npmjs.org/', './mongodb' ]
+20 verbose url resolved https://registry.npmjs.org/mongodb
+21 verbose request where is https://registry.npmjs.org/mongodb
+22 info trying registry request attempt 1 at 23:05:07
+23 verbose etag "4301SOVI4T2Q4LS1KRS2YUL4B"
+24 http GET https://registry.npmjs.org/mongodb
+25 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+26 info trying registry request attempt 2 at 23:05:29
+27 verbose etag "4301SOVI4T2Q4LS1KRS2YUL4B"
+28 http GET https://registry.npmjs.org/mongodb
+29 http 304 https://registry.npmjs.org/mongodb
+30 silly registry.get cb [ 304,
+30 silly registry.get   { date: 'Thu, 21 Aug 2014 15:05:29 GMT',
+30 silly registry.get     server: 'Apache',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     'last-modified': 'Thu, 21 Aug 2014 15:05:30 GMT',
+30 silly registry.get     'cache-control': 'max-age=60',
+30 silly registry.get     etag: '"4301SOVI4T2Q4LS1KRS2YUL4B"',
+30 silly registry.get     'x-served-by': 'cache-hk93-HKG',
+30 silly registry.get     'x-cache': 'HIT',
+30 silly registry.get     'x-cache-hits': '1',
+30 silly registry.get     'x-timer': 'S1408633529.877675,VS0,VE239',
+30 silly registry.get     vary: 'Accept',
+30 silly registry.get     'content-length': '0',
+30 silly registry.get     'keep-alive': 'timeout=10, max=50',
+30 silly registry.get     connection: 'Keep-Alive' } ]
+31 verbose etag https://registry.npmjs.org/mongodb from cache
+32 silly lockFile 27492900-mongodb-1-3-13 mongodb@1.3.13
+33 silly lockFile 27492900-mongodb-1-3-13 mongodb@1.3.13
+34 error Error: version not found: mongodb@1.3.13
+34 error     at C:\Program Files\nodejs\node_modules\npm\lib\cache\add-named.js:125:12
+34 error     at saved (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\get.js:167:7)
+34 error     at Object.oncomplete (fs.js:107:15)
+35 error If you need help, you may report this *entire* log,
+35 error including the npm and node versions, at:
+35 error     <http://github.com/npm/npm/issues>
+36 error System Windows_NT 6.1.7601
+37 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "mongodb@1.3.13"
+38 error cwd C:\My_Project\Nodejs_Webservice\nodecellar-master
+39 error node -v v0.10.30
+40 error npm -v 1.4.21
+41 verbose exit [ 1, true ]

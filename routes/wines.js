@@ -1,19 +1,75 @@
 var mongo = require('mongodb');
 
+//var db;
+
+console.log("Express server in MongoDB Server 1");
+
+//db = new mongodb.Db('app28728980', new mongodb.Server('kahana.mongohq.com', 10009, {auto_reconnect:true}), {});
+
+/*db.open(function(err, p_client) {
+  //Notice the USERNAME and PASSWORD!
+  console.log("Express server in MongoDB Server 2 err = " + err);
+  db.authenticate('wynnszenn2', 'a63114450', function(err) {
+   //Change error handler when going into production 
+   console.log("Express server in MongoDB Server 3 err = " + err);
+   if (err) console.log(err);
+    
+    var collection = new mongodb.Collection(db, 'test_collection');
+    collection.find({}, {limit:10}).toArray(function(err, docs) {
+      //In an array, this will log all your documents you added before we tested this
+      console.dir(docs);
+    });
+  });
+});*/
+
+
+
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
-	
-console.log("Express server in MongoDB ");
 
-var server = new Server('127.0.0.1', 27017, {auto_reconnect: true});
-db = new Db('winedb', server, {safe: true});
-
-console.log("Express server in MongoDB 2 db =" + db);
+//var db = mongoClient.db('winedb');
+//console.log("Express server in MongoDB Server 4 db = " + db);
+//var server = new Server('127.0.0.1', 27017, {auto_reconnect: true});
+var server = new Server('kahana.mongohq.com', 10009, {auto_reconnect: true});
+//db = new Db('winedb', server, {safe: true});
+db = new Db('app28728980', server, {safe: true});
+//mongodb://wynnszenn2:a63114450@kahana.mongohq.com:10009/app28728980
+console.log("Express server in MongoDB 2 db = " + db);
 
 db.open(function(err, db) {
 	console.log("Express server in MongoDB 2 db.open = " + err);
+	
+	db.authenticate('wynnszenn2', 'a63114450', function(err) {
+		console.log("Express server in MongoDB Server 3 err = " + err);
+		if(!err) {
+
+        console.log("Connected to 'winedb' database");
+			db.collection('wines', {safe:true}, function(err, collection) {
+				console.log("Connected to 'winedb' collection err = " + err);
+				//populateDB();
+				if (err) {
+					console.log("The 'wines' collection doesn't exist. Creating it with sample data...");
+					populateDB();
+				}
+			});
+		
+		}
+		else
+		{
+			console.log("Failed Connected to database");
+		}
+	});
+ 
+
+});
+
+
+//db.open(function(err, db) {
+/*db.open(function(err, p_client) {
+	console.log("Express server in MongoDB 2 db.open = " + err);
     if(!err) {
+
         console.log("Connected to 'winedb' database");
         db.collection('wines', {safe:true}, function(err, collection) {
             if (err) {
@@ -21,11 +77,16 @@ db.open(function(err, db) {
                 populateDB();
             }
         });
-    }else
+	
+    }
+	else
 	{
-		console.log("Failed Connected to 'winedb' database");
+		console.log("Failed Connected to database");
 	}
-});
+
+		
+
+});*/
 
 exports.findById = function(req, res) {
     var id = req.params.id;
