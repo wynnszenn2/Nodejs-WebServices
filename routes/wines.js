@@ -70,6 +70,21 @@ db.open(function(err, db) {
 	console.log("Express server in MongoDB 2 db.open = " + err);
     if(!err) {
 
+=======
+var Server = mongo.Server,
+    Db = mongo.Db,
+    BSON = mongo.BSONPure;
+	
+console.log("Express server in MongoDB ");
+
+var server = new Server('127.0.0.1', 27017, {auto_reconnect: true});
+db = new Db('winedb', server, {safe: true});
+
+console.log("Express server in MongoDB 2 db =" + db);
+
+db.open(function(err, db) {
+	console.log("Express server in MongoDB 2 db.open = " + err);
+    if(!err) {
         console.log("Connected to 'winedb' database");
         db.collection('wines', {safe:true}, function(err, collection) {
             if (err) {
@@ -77,6 +92,7 @@ db.open(function(err, db) {
                 populateDB();
             }
         });
+
 	
     }
 	else
@@ -87,6 +103,7 @@ db.open(function(err, db) {
 		
 
 });*/
+
 
 exports.findById = function(req, res) {
     var id = req.params.id;
